@@ -2,6 +2,7 @@ package com.canhub.cropper
 
 import android.graphics.Bitmap
 import android.net.Uri
+import androidx.activity.ComponentActivity
 import androidx.annotation.Nullable
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
@@ -13,7 +14,7 @@ import kotlinx.coroutines.withContext
 import java.lang.ref.WeakReference
 
 class BitmapCroppingWorkerJob internal constructor(
-    private val activity: FragmentActivity,
+    private val activity: ComponentActivity,
     private val cropImageViewReference: WeakReference<CropImageView>,
     val uri: Uri?,
     private val bitmap: Bitmap?,
@@ -37,7 +38,7 @@ class BitmapCroppingWorkerJob internal constructor(
     private var currentJob: Job? = null
 
     constructor(
-        activity: FragmentActivity,
+        activity: ComponentActivity,
         cropImageView: CropImageView,
         bitmap: Bitmap?,
         cropPoints: FloatArray,
@@ -76,7 +77,7 @@ class BitmapCroppingWorkerJob internal constructor(
     )
 
     constructor(
-        activity: FragmentActivity,
+        activity: ComponentActivity,
         cropImageView: CropImageView,
         uri: Uri?,
         cropPoints: FloatArray,

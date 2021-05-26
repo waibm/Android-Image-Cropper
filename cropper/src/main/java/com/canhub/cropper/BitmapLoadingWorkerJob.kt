@@ -3,6 +3,7 @@ package com.canhub.cropper
 import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
+import androidx.activity.ComponentActivity
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
 import com.canhub.cropper.utils.getFilePathFromUri
@@ -14,7 +15,7 @@ import kotlinx.coroutines.withContext
 import java.lang.ref.WeakReference
 
 class BitmapLoadingWorkerJob internal constructor(
-    private val activity: FragmentActivity,
+    private val activity: ComponentActivity,
     cropImageView: CropImageView,
     val uri: Uri
 ) {
